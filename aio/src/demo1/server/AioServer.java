@@ -28,7 +28,6 @@ public class AioServer implements Runnable {
      */
     CountDownLatch latch;
 
-
     public AioServer() {
         try {
             // 创建服务端套接字
