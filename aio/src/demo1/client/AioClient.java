@@ -42,7 +42,6 @@ public class AioClient implements Runnable, CompletionHandler<Void, AioClient> {
         }
     }
 
-
     @Override
     public void run() {
         // 初始化倒计时锁存
@@ -139,4 +138,5 @@ public class AioClient implements Runnable, CompletionHandler<Void, AioClient> {
             latch.countDown();
         }
     }
+
 }
