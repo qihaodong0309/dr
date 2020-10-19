@@ -58,7 +58,7 @@ public class MoreReactor implements Runnable {
             for (Selector selector : selectors) {
                 try {
                     // 多路复用器阻塞等待客户端连接
-                    selector.select();
+                    selector.select(1000);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
