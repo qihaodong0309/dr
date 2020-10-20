@@ -25,7 +25,7 @@ public class TimeServer {
     private static final int PORT = 8888;
 
     private void init() {
-        // 创建两个 NIO 线程组，这里线程组就类似 selector 线程
+        // 创建两个 NIO 线程组，这两个线程组就类似多 Reactor 模式中的 Reactor
         // group 线程组主要用于处理客户端连接
         EventLoopGroup group = new NioEventLoopGroup();
         // workGroup 线程组主要用于管道的读写操作
