@@ -13,7 +13,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
     /**
      * 用来记录客户端发送的记录数
      */
-    private int counter;
+    private int counter = 0;
 
     private byte[] bytes = "QUERY TIME ORDER\n".getBytes();
 
@@ -34,7 +34,6 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
         buf.readBytes(bytes);
         String message = new String(bytes, "UTF-8").substring(0, bytes.length - "\n".length());
         System.out.println("Time Client Receive message：[" + message + "] , and counter =  " + ++counter);
-
     }
 
     @Override
