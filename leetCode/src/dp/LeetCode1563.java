@@ -1,3 +1,5 @@
+package dp;
+
 /**
  * @author qihaodong
  */
@@ -8,6 +10,12 @@ public class LeetCode1563 {
         System.out.println(new LeetCode1563().stoneGameV(a));
     }
 
+    /**
+     * dp
+     *
+     * @param stoneValue
+     * @return
+     */
     public int stoneGameV(int[] stoneValue) {
         int length = stoneValue.length;
         int[][] record = new int[length + 1][length + 1];
@@ -38,6 +46,47 @@ public class LeetCode1563 {
             }
         }
         return dp[1][length];
+    }
+
+    int[][] record = null;
+
+    /**
+     * 优化代码后的dp
+     *
+     * @param stoneValue
+     * @return
+     */
+    public int stoneGameV2(int[] stoneValue) {
+        int n = stoneValue.length;
+        record = new int[n + 1][n + 1];
+        return dfs(stoneValue, 1, n);
+    }
+
+    private int dfs(int[] stoneValue, int left, int right) {
+        if (left == right) {
+            return 0;
+        }
+        if (record[left][right] != 0) {
+            return record[left][right];
+        }
+        int sum = 0;
+        for (int i = left; i <= right; i++) {
+            sum += stoneValue[i - 1];
+        }
+        int leftVal = 0;
+        for (int i = left; i < right; i++) {
+            leftVal += stoneValue[i - 1];
+            int rightVal = sum - leftVal;
+            if (leftVal > rightVal) {
+                record[left][right] = Math.max(record[left][right], rightVal + dfs(stoneValue, i + 1, right));
+            } else if (leftVal == rightVal) {
+                record[left][right] = Math.max(record[left][right],
+                        leftVal + Math.max(dfs(stoneValue, left, i), dfs(stoneValue, i + 1, right)));
+            } else {
+                record[left][right] = Math.max(record[left][right], leftVal + dfs(stoneValue, left, i));
+            }
+        }
+        return record[left][right];
     }
 
 }
