@@ -1,6 +1,8 @@
 package dailyrecord;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author qihaodong
@@ -33,7 +35,7 @@ public class LeetCode1030 {
     }
 
     /**
-     * 新方法
+     * 一次遍历法，需要更多的空间
      *
      * @param R
      * @param C
@@ -42,7 +44,24 @@ public class LeetCode1030 {
      * @return
      */
     public int[][] allCellsDistOrder2(int R, int C, int r0, int c0) {
-
+        int maxLength = Math.max(r0, R - 1 - r0) + Math.max(c0, C - 1 - c0), k = 0;
+        List<List<int[]>> list = new ArrayList<>();
+        for (int i = 0; i <= maxLength; i++) {
+            list.add(new ArrayList<>());
+        }
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                int diff = Math.abs(i - r0) + Math.abs(j - c0);
+                list.get(diff).add(new int[]{i, j});
+            }
+        }
+        int[][] result = new int[R * C][];
+        for (List<int[]> temp : list) {
+            for (int[] ints : temp) {
+                result[k++] = ints;
+            }
+        }
+        return result;
     }
 
 }
