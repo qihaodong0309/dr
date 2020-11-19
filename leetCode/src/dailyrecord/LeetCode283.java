@@ -30,6 +30,8 @@ public class LeetCode283 {
     }
 
     /**
+     * 快慢指针
+     *
      * @param nums
      */
     public void moveZeroes2(int[] nums) {
