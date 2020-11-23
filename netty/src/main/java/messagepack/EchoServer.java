@@ -35,8 +35,8 @@ public class EchoServer {
                             socketChannel.pipeline().addLast(new ChannelHandlerAdapter() {
                                 @Override
                                 public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                                    System.out.println("服务端含有待读取信息");
-                                    System.out.println("Server Receive message：" + msg.toString());
+                                    System.out.println("Echo server receive message from client :" + msg);
+                                    ctx.writeAndFlush(msg);
                                 }
 
                                 @Override

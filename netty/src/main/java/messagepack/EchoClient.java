@@ -17,7 +17,7 @@ public class EchoClient {
 
     private static final String ADDRESS = "127.0.0.1";
     private static final int PORT = 8888;
-    private static final int NUM = 10;
+    private static final int NUM = 1;
 
     private void connect() {
         EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
@@ -34,12 +34,22 @@ public class EchoClient {
                         socketChannel.pipeline().addLast(new ChannelHandlerAdapter() {
                             @Override
                             public void channelActive(ChannelHandlerContext ctx) throws Exception {
-                                System.out.println("连接建立成功！");
                                 UserInfo[] infos = new UserInfo[NUM];
                                 for (int i = 0; i < infos.length; i++) {
                                     infos[i] = new UserInfo(i + 1, "CLASS-" + (i + 1));
                                     ctx.write(infos[i]);
                                 }
+                                ctx.flush();
+                            }
+
+                            @Override
+                            public void channelRead(ChannelHandlerContext ctx, Object msg) {
+                                System.out.println("Client receive the msgpack message：" + msg);
+                                ctx.write(msg);
+                            }
+
+                            @Override
+                            public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
                                 ctx.flush();
                             }
                         });

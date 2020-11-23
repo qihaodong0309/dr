@@ -10,7 +10,7 @@ import org.msgpack.MessagePack;
  *
  * @author qihaodong
  */
-public class MsgPackEncoder extends MessageToByteEncoder {
+public class MsgPackEncoder extends MessageToByteEncoder<Object> {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, Object o, ByteBuf byteBuf) throws Exception {
