@@ -5,6 +5,8 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.codec.LengthFieldPrepender;
 
 /**
  * @author qihaodong
@@ -30,7 +32,10 @@ public class EchoServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            socketChannel.pipeline().addLast("frameDecoder"
+                                    , new LengthFieldBasedFrameDecoder(65535, 0, 2, 0, 2));
                             socketChannel.pipeline().addLast("msgpack decoder", new MsgPackDecoder());
+                            socketChannel.pipeline().addLast("frameEncoder", new LengthFieldPrepender(2));
                             socketChannel.pipeline().addLast("msgpack encoder", new MsgPackEncoder());
                             socketChannel.pipeline().addLast(new ChannelHandlerAdapter() {
                                 @Override
