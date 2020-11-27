@@ -12,11 +12,11 @@ public class QuickSort {
     public static void main(String[] args) {
         QuickSort sort = new QuickSort();
         int[] a = new int[100];
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < a.length; i++) {
             a[i] = new Random().nextInt(1000);
         }
         sort.echo(a, 0, 99);
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
     }
