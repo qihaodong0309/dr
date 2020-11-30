@@ -1,4 +1,4 @@
-package dps;
+package dfs;
 
 import model.TreeNode;
 

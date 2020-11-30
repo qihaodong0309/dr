@@ -1,4 +1,4 @@
-package dailyrecord;
+package math;
 
 /**
  * @author qihaodong

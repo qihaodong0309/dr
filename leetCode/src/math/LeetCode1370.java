@@ -1,4 +1,4 @@
-package dailyrecord;
+package math;
 
 import java.util.Iterator;
 import java.util.Map;

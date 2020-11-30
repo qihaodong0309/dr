@@ -1,4 +1,4 @@
-package dailyrecord;
+package math;
 
 import java.util.ArrayList;
 import java.util.Arrays;

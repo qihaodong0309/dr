@@ -1,4 +1,4 @@
-package dailyrecord;
+package greedy;
 
 import java.util.Arrays;
 
