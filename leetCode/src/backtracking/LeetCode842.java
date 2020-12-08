@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class LeetCode842 {
 
-
     public List<Integer> splitIntoFibonacci(String S) {
         List<Integer> result = new ArrayList<>();
         backtrack(result, S, S.length(), 0, 0, 0);
