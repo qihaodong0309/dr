@@ -1,3 +1,5 @@
+package dp;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -91,6 +93,45 @@ public class LeetCode131 {
             end--;
         }
         return true;
+    }
+
+    /**
+     * dp + 回溯法
+     *
+     * @param s
+     * @return
+     */
+    public List<List<String>> partition3(String s) {
+        int n = s.length();
+        if (n == 0) {
+            return new ArrayList<>();
+        }
+        boolean[][] dp = new boolean[n][n];
+        for (int right = 0; right < n; right++) {
+            for (int left = 0; left <= right; left++) {
+                if (s.charAt(left) == s.charAt(right) && (right - left <= 2 || dp[left + 1][right - 1])) {
+                    dp[left][right] = true;
+                }
+            }
+        }
+        List<List<String>> result = new ArrayList<>();
+        echo(s, 0, n, dp, new ArrayDeque<>(), result);
+        return result;
+    }
+
+    private void echo(String s, int start, int end, boolean[][] dp, Deque<String> deque, List<List<String>> result) {
+        if (start == end) {
+            result.add(new ArrayList<>(deque));
+            return;
+        }
+        for (int i = start; i < end; i++) {
+            if (!dp[start][i]) {
+                continue;
+            }
+            deque.addLast(s.substring(start, i + 1));
+            echo(s, i + 1, end, dp, deque, result);
+            deque.removeLast();
+        }
     }
 
 }
