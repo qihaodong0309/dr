@@ -1,4 +1,4 @@
-package math;
+package array;
 
 /**
  * @author qihaodong
