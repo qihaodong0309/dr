@@ -1,4 +1,4 @@
-package dichotomy;
+package array;
 
 /**
  * @author qihaodong
