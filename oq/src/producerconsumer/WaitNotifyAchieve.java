@@ -5,7 +5,7 @@ package producerconsumer;
  *
  * @author qihaodong
  */
-public class WaitNotify {
+public class WaitNotifyAchieve {
 
     public static void main(String[] args) {
         for (int i = 0; i < WORKER_NUM; i++) {
