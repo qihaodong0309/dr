@@ -58,6 +58,12 @@ public class LeetCode238 {
         return result;
     }
 
+    /**
+     * 基于dp 思路，不借助额外空间
+     *
+     * @param nums
+     * @return
+     */
     public int[] productExceptSelf3(int[] nums) {
         int[] result = new int[nums.length];
         result[0] = 1;
