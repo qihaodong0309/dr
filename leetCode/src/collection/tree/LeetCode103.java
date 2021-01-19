@@ -1,4 +1,4 @@
-package collection.list;
+package collection.tree;
 
 import model.TreeNode;
 
