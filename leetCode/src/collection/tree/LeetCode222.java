@@ -1,4 +1,4 @@
-package algorithm.dfs;
+package collection.tree;
 
 import model.TreeNode;
 

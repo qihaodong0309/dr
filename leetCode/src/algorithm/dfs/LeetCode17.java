@@ -1,4 +1,4 @@
-package algorithm.backtracking;
+package algorithm.dfs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +16,12 @@ public class LeetCode17 {
         }
     }
 
+    /**
+     * dfs，字符串类型数据不是引用传递，无须回溯
+     *
+     * @param digits
+     * @return
+     */
     public List<String> letterCombinations(String digits) {
         HashMap<Integer, String> map = new HashMap<>();
         map.put(2, "abc");
@@ -30,11 +36,11 @@ public class LeetCode17 {
         if (digits == null || digits.equals("")) {
             return result;
         }
-        backtrack(result, map, digits, 0, "");
+        dfs(result, map, digits, 0, "");
         return result;
     }
 
-    private void backtrack(List<String> list, HashMap<Integer, String> map, String s, int index, String temp) {
+    private void dfs(List<String> list, HashMap<Integer, String> map, String s, int index, String temp) {
         if (temp.length() == s.length()) {
             list.add(temp);
             return;
@@ -43,7 +49,7 @@ public class LeetCode17 {
         char[] chars = map.get(num).toCharArray();
         for (char c : chars) {
             String newTemp = temp + c;
-            backtrack(list, map, s, index + 1, newTemp);
+            dfs(list, map, s, index + 1, newTemp);
         }
     }
 
