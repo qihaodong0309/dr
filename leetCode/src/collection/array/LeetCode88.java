@@ -1,4 +1,4 @@
-package algorithm.math;
+package collection.array;
 
 /**
  * @author qihaodong

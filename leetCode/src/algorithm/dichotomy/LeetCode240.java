@@ -1,4 +1,4 @@
-package collection.array;
+package algorithm.dichotomy;
 
 /**
  * @author qihaodong

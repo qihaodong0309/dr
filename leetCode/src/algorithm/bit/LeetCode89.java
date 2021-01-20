@@ -1,4 +1,4 @@
-package algorithm.math;
+package algorithm.bit;
 
 import java.util.ArrayList;
 import java.util.HashSet;

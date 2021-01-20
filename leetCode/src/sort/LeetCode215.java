@@ -1,4 +1,4 @@
-package collection.array;
+package sort;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

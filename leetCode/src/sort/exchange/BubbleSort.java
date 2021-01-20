@@ -1,4 +1,4 @@
-package exchange;
+package sort.exchange;
 
 import java.util.Random;
 

@@ -7,6 +7,13 @@ import java.util.Arrays;
  */
 public class LeetCode455 {
 
+    /**
+     * 贪心算法
+     *
+     * @param g
+     * @param s
+     * @return
+     */
     public int findContentChildren(int[] g, int[] s) {
         Arrays.sort(g);
         Arrays.sort(s);
