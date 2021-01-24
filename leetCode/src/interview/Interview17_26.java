@@ -1,4 +1,4 @@
-package jzoffer;
+package interview;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * @author qihaodong
  */
-public class JzOffer17_26 {
+public class Interview17_26 {
 
     public static void main(String[] args) {
         double d = 114.1455;
