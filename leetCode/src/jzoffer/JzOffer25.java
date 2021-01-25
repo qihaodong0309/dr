@@ -1,16 +1,14 @@
-package collection.list;
+package jzoffer;
 
 import model.ListNode;
 
 /**
- * 同 JzOffer 25
- *
  * @author qihaodong
  */
-public class LeetCode21 {
+public class JzOffer25 {
 
     /**
-     * 递归
+     * 递归法
      *
      * @param l1
      * @param l2
@@ -31,7 +29,7 @@ public class LeetCode21 {
     }
 
     /**
-     * 正常遍历
+     * LeetCode 21 方法二优化，省空间
      *
      * @param l1
      * @param l2
@@ -40,14 +38,14 @@ public class LeetCode21 {
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(-1), temp = result;
         while (l1 != null && l2 != null) {
-            boolean judge = l1.val <= l2.val;
-            temp.next = new ListNode(judge ? l1.val : l2.val);
-            temp = temp.next;
-            if (judge) {
+            if (l1.val <= l2.val) {
+                temp.next = l1;
                 l1 = l1.next;
             } else {
+                temp.next = l2;
                 l2 = l2.next;
             }
+            temp = temp.next;
         }
         temp.next = l2 == null ? l1 : l2;
         return result.next;
