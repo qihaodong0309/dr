@@ -3,6 +3,8 @@ package jzoffer;
 import java.util.PriorityQueue;
 
 /**
+ * 同 LeetCode 295
+ *
  * @author qihaodong
  */
 public class JzOffer41 {
