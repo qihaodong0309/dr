@@ -3,6 +3,8 @@ package algorithm.dichotomy;
 import java.util.Arrays;
 
 /**
+ * 同 JzOffer 39
+ *
  * @author qihaodong
  */
 public class LeetCode169 {
