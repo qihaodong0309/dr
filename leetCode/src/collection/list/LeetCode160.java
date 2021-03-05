@@ -3,6 +3,8 @@ package collection.list;
 import model.ListNode;
 
 /**
+ * 同 JzOffer 52
+ *
  * @author qihaodong
  */
 public class LeetCode160 {

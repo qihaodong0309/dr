@@ -9,7 +9,7 @@ import java.util.Map;
 public class JzOffer50 {
 
     /**
-     * 返回字符
+     * 返回字符（有序哈希表）
      *
      * @param s
      * @return
