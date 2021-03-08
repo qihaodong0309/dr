@@ -1,6 +1,8 @@
 package algorithm.dichotomy;
 
 /**
+ * 同 JzOffer 53_1
+ *
  * @author qihaodong
  */
 public class LeetCode34 {
