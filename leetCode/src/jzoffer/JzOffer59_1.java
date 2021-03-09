@@ -4,6 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
+ * 同 LeetCode 239
+ *
  * @author qihaodong
  */
 public class JzOffer59_1 {
@@ -13,6 +15,13 @@ public class JzOffer59_1 {
         test.maxSlidingWindow(new int[]{1, 3, 1, 2, 0, 5}, 3);
     }
 
+    /**
+     * K神解法
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0 || k == 0) {
             return new int[0];

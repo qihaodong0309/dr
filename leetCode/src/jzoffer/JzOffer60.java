@@ -1,5 +1,7 @@
 package jzoffer;
 
+import java.util.Arrays;
+
 /**
  * @author qihaodong
  */
@@ -99,6 +101,27 @@ public class JzOffer60 {
         }
         for (int i = n; i <= 6 * n; i++) {
             result[i - n] = (record[n % 2][i] * 1.0) / num;
+        }
+        return result;
+    }
+
+    /**
+     * K神解法
+     *
+     * @param n
+     * @return
+     */
+    public double[] dicesProbability4(int n) {
+        double[] result = new double[6];
+        Arrays.fill(result, 1.0 / 6.0);
+        for (int i = 2; i <= n; i++) {
+            double[] tmp = new double[5 * i + 1];
+            for (int j = 0; j < result.length; j++) {
+                for (int k = 0; k < 6; k++) {
+                    tmp[j + k] += result[j] / 6.0;
+                }
+            }
+            result = tmp;
         }
         return result;
     }
