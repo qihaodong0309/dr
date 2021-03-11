@@ -2,11 +2,10 @@ package creative.factory;
 
 /**
  * 工厂方法模式
- * 不属于 23 种设计模式
  *
  * @author qihaodong
  */
-public class MethodFactory {
+public class FactoryMethod {
 
      /*
     和简单工厂模式相比，工厂方法模式只是在上层多了一步抽象工厂，把创建产品的具体实现放在不同的工厂类中
