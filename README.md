@@ -1,5 +1,4 @@
-# dr
-Record daily learning
+# dr (Record daily learning)
 
 ### dm (design model) 设计模式
 
@@ -12,3 +11,7 @@ Record daily learning
 ### lambda JAVA 1.8 新特性
 
 ### tool 工具类，主要保存常用时间、字符串等处理工具类源码
+
+--- 
+
+2021-03-15 ~ 2021-03-21：
