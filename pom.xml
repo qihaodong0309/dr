@@ -8,31 +8,5 @@
     <artifactId>dr</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>netty</module>
-    </modules>
-
-    <properties>
-        <netty.version>5.0.0.Alpha1</netty.version>
-        <msgpack.version>0.6.12</msgpack.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- 引入 netty 包 -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <!-- 引入 messagePack -->
-            <!-- 编解码器（发送 POJO 对象信息） -->
-            <dependency>
-                <groupId>org.msgpack</groupId>
-                <artifactId>msgpack</artifactId>
-                <version>${msgpack.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
