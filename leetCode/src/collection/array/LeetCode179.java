@@ -24,10 +24,10 @@ public class LeetCode179 {
             while (a <= x) {
                 a *= 10;
             }
-            while (b < y) {
+            while (b <= y) {
                 b *= 10;
             }
-            return (int) (-b * x - a + -a * y + b);
+            return (int) (a * y + x - b * x - y);
         });
         if (integers[0] == 0) {
             return "0";
