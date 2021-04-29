@@ -1,3 +1,5 @@
+package algorithm.base;
+
 /**
  * @author qihaodong
  */
