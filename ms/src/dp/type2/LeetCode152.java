@@ -1,4 +1,4 @@
-package dp;
+package dp.type2;
 
 /**
  * @author qihaodong

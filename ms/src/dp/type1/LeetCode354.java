@@ -1,4 +1,4 @@
-package dp;
+package dp.type1;
 
 import java.util.Arrays;
 import java.util.Comparator;

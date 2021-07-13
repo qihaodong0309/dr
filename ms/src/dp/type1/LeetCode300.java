@@ -1,8 +1,10 @@
-package dp;
+package dp.type1;
 
 import java.util.Arrays;
 
 /**
+ * 子序列递增问题
+ *
  * @author qihaodong
  */
 public class LeetCode300 {
