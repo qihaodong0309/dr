@@ -1,6 +1,8 @@
 package dp.type3;
 
 /**
+ * 不相邻子序列最大和问题
+ *
  * @author qihaodong
  */
 public class LeetCode198 {
