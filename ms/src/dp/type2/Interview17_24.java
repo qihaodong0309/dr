@@ -1,7 +1,7 @@
 package dp.type2;
 
 /**
- * 子序列连续和最大，或者成绩最大问题
+ * 子序列连续和最大，或者乘积最大问题
  *
  * @author qihaodong
  */
